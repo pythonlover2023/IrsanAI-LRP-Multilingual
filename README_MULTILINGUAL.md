@@ -122,7 +122,7 @@ const translatedText = i18n.t('ui.buttons.generate');
     "direction": "ltr"
   },
   "ui": {
-    "title": "IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR",
+    "title": "IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR",
     "buttons": {
       "generate": "Generate IrsanAI - LRP Document"
     }

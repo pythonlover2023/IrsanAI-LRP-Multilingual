@@ -8,7 +8,7 @@
     "lastUpdated": "2025-01-04"
   },
   "ui": {
-    "title": "IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR",
+    "title": "IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR",
     "languageSelector": {
       "label": "Sprache auswählen",
       "current": "Aktuelle Sprache: {language}"
@@ -66,7 +66,7 @@
   },
   "protocol": {
     "templates": {
-      "header": "# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT",
+      "header": "# IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT",
       "disclaimer": "*Dies ist ein automatisch generiertes IrsanAI - LRP Dokument – KEINE ÄNDERUNGEN VORNEHMEN!*",
       "metadataTitle": "## METADATEN (MASCHINENLESBAR)",
       "userRequestTitle": "## USER-REQUEST (AUTOMATISCH GENERIERT)",

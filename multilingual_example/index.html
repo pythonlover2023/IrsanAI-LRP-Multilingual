@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/i18n.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div id="languageSelector" class="language-selector-container"></div>
+
+    <h1 data-i18n="ui.title">IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR</h1>
+
+    <div class="container">
+        <div class="instructions">
+            <h3 data-i18n="instructions.howItWorks.title">So funktioniert das ONLY-ONE-PROMPT SYSTEM:</h3>
+            <ol id="howItWorksSteps">
+                <!-- Steps will be populated by JavaScript -->
+            </ol>
+        </div>
+
+        <div class="warning">
+            <strong data-i18n="instructions.warning.title">Wichtig:</strong>
+            <span data-i18n="instructions.warning.text">Dieses Tool generiert keine Code-Lösungen direkt. Es erstellt nur das IrsanAI - LRP Dokument, das Sie an ein Online-LLM senden müssen.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="project-description" data-i18n="ui.labels.projectDescription">Beschreibe dein Projektvorhaben:</label>
+            <textarea id="project-description" data-i18n="ui.labels.placeholder" placeholder="Beschreibe, was du erreichen möchtest..."></textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="generate" class="generate-btn">
+                <span data-i18n="ui.buttons.generate">IrsanAI - LRP Dokument generieren</span>
+            </button>
+        </div>
+
+        <div id="lrp-output" class="output" style="display: none;"></div>
+
+        <div id="button-container" style="display: none; margin-top: 20px;">
+            <div class="button-group">
+                <button id="copy" class="copy">
+                    <span data-i18n="ui.buttons.copy">📋 In Zwischenablage kopieren</span>
+                </button>
+                <button id="reset" class="reset">
+                    <span data-i18n="ui.buttons.reset">🗑️ Zurücksetzen</span>
+                </button>
+                <button id="download" class="download">
+                    <span data-i18n="ui.buttons.download">⬇️ Als Markdown herunterladen</span>
+                </button>
+                <button id="validate" class="validate">
+                    <span data-i18n="ui.buttons.validate">✅ IrsanAI - LRP Dokument Validieren</span>
+                </button>
+            </div>
+
+            <div id="validation-result" class="validation-result"></div>
+        </div>
+
+        <div class="instructions">
+            <h3 data-i18n="instructions.howToUse.title">So verwendest du das IrsanAI - LRP Dokument:</h3>
+            <ul id="howToUseItems">
+                <!-- Items will be populated by JavaScript -->
+            </ul>
+            <p><strong data-i18n="instructions.howToUse.important">Wichtig: Dieses System trifft KEINE EIGENEN ENTSCHEIDUNGEN mehr - das LLM analysiert die Anfrage selbst!</strong></p>
+        </div>
+    </div>
+
+    <div id="copy-notification" class="copy-notification">
+        <span data-i18n="ui.notifications.copySuccess">✅ IrsanAI - LRP Dokument wurde erfolgreich in die Zwischenablage kopiert!</span>
+    </div>
+
+    <!-- Status indicator -->
+    <div id="status-indicator" class="status-indicator">
+        <span data-i18n="ui.status.ready">Bereit</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/lrp-generator.js"></script>
+    <script src="js/ui-controller.js"></script>
+    
+    <script>
+        // Initialize the application when DOM is loaded
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Wait for i18n to initialize
+            await window.i18n.init();
+            
+            // Initialize UI controller
+            window.uiController = new UIController();
+            
+            // Subscribe to language changes
+            window.i18n.subscribe((language) => {
+                // Update dynamic content
+                updateDynamicContent();
+                
+                // Update UI elements
+                window.i18n.updateDOM();
+                
+                // Update LRP generator language
+                if (window.lrpGenerator) {
+                    window.lrpGenerator.setLanguage(language);
+                }
+            });
+            
+            // Initial content update
+            updateDynamicContent();
+            window.i18n.updateDOM();
+        });
+
+        function updateDynamicContent() {
+            // Update how it works steps
+            const stepsContainer = document.getElementById('howItWorksSteps');
+            if (stepsContainer) {
+                const steps = window.i18n.t('instructions.howItWorks.steps');
+                stepsContainer.innerHTML = steps.map(step => `<li>${step}</li>`).join('');
+            }
+
+            // Update how to use items
+            const itemsContainer = document.getElementById('howToUseItems');
+            if (itemsContainer) {
+                const items = window.i18n.t('instructions.howToUse.items');
+                itemsContainer.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+            }
+        }
+    </script>
+</body>
+</html>
+

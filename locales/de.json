@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "language": "de",
+    "name": "Deutsch",
+    "direction": "ltr",
+    "charset": "UTF-8",
+    "version": "1.0.0",
+    "lastUpdated": "2025-01-04"
+  },
+  "ui": {
+    "title": "IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR",
+    "languageSelector": {
+      "label": "Sprache auswählen",
+      "current": "Aktuelle Sprache: {language}"
+    },
+    "buttons": {
+      "generate": "IrsanAI - LRP Dokument generieren",
+      "copy": "📋 In Zwischenablage kopieren",
+      "reset": "🗑️ Zurücksetzen",
+      "download": "⬇️ Als Markdown herunterladen",
+      "validate": "✅ IrsanAI - LRP Dokument Validieren"
+    },
+    "labels": {
+      "projectDescription": "Beschreibe dein Projektvorhaben:",
+      "placeholder": "Beschreibe, was du erreichen möchtest..."
+    },
+    "notifications": {
+      "copySuccess": "✅ IrsanAI - LRP Dokument wurde erfolgreich in die Zwischenablage kopiert!",
+      "copyError": "❌ Fehler beim Kopieren in die Zwischenablage",
+      "downloadSuccess": "✅ Markdown-Datei wurde erfolgreich heruntergeladen",
+      "validationSuccess": "✅ IrsanAI - LRP Dokument ist vollständig konform",
+      "validationError": "❌ IrsanAI - LRP Dokument weist Probleme auf"
+    },
+    "status": {
+      "generating": "Generiere IrsanAI - LRP Dokument...",
+      "validating": "Validiere Dokument...",
+      "ready": "Bereit"
+    }
+  },
+  "instructions": {
+    "howItWorks": {
+      "title": "So funktioniert das ONLY-ONE-PROMPT SYSTEM:",
+      "steps": [
+        "Geben Sie Ihre Anfrage in das Textfeld ein",
+        "Klicken Sie auf \"IrsanAI - LRP Dokument generieren\"",
+        "Kopieren Sie den generierten Text mit dem Copy-Button",
+        "Fügen Sie ihn in ein Online-LLM (z.B. ChatGPT, Claude) ein",
+        "Befolgen Sie die Anweisungen des LLMs"
+      ]
+    },
+    "howToUse": {
+      "title": "So verwendest du das IrsanAI - LRP Dokument:",
+      "items": [
+        "Kopiere den generierten Markdown-Code in dein Online-LLM (ChatGPT, Claude, etc.)",
+        "Führe alle Schritte aus, die das LLM dir anweist",
+        "Wichtig: Das LLM wird dich nach Verständnisbestätigung fragen, bevor es Code generiert",
+        "Bei Hardware-Abhängigkeiten: Führe zuerst IrsanAI_OS_HW_Detector.py lokal aus",
+        "Bei Fehlern: Nutze IrsanAI_report.json für inkrementelle Updates"
+      ],
+      "important": "Wichtig: Dieses System trifft KEINE EIGENEN ENTSCHEIDUNGEN mehr - das LLM analysiert die Anfrage selbst!"
+    },
+    "warning": {
+      "title": "Wichtig:",
+      "text": "Dieses Tool generiert keine Code-Lösungen direkt. Es erstellt nur das IrsanAI - LRP Dokument, das Sie an ein Online-LLM senden müssen."
+    }
+  },
+  "protocol": {
+    "templates": {
+      "header": "# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT",
+      "disclaimer": "*Dies ist ein automatisch generiertes IrsanAI - LRP Dokument – KEINE ÄNDERUNGEN VORNEHMEN!*",
+      "metadataTitle": "## METADATEN (MASCHINENLESBAR)",
+      "userRequestTitle": "## USER-REQUEST (AUTOMATISCH GENERIERT)",
+      "preSelectorTitle": "## PRE-SELECTOR ANWEISUNG FÜR DAS LLM",
+      "llmInstructionTitle": "## ANWEISUNG FÜR LLMs",
+      "languageInstruction": "ANTWORTE AUF DEUTSCH",
+      "metaRecognitionProcess": "Führe folgenden META-ERKENNTNIS-PROZESS durch:",
+      "selfReflectiveAnalysis": "1. **SELBSTREFLEKTIERENDE INTENT-ANALYSE**",
+      "systemicDecisionPattern": "2. **SYSTEMISCHES ENTSCHEIDUNGSMUSTER**",
+      "decisionJustification": "3. **BEGRÜNDUNG DER ENTSCHEIDUNG**",
+      "userConfirmation": "4. **EXPLIZITE BENUTZERBESTÄTIGUNG**",
+      "finalSystemInstruction": "5. **ABSCHLIESSENDE SYSTEMANWEISUNG (NICHT IGNORIERBAR)**"
+    },
+    "instructions": {
+      "followPreSelector": "FOLGE STRENG DER PRE-SELECTOR ANWEISUNG – Keine eigenständigen Entscheidungen",
+      "showDecisionBasis": "ZEIGE DEINE ENTSCHEIDUNGSBASIS KLAR – Nutze folgendes Format:",
+      "understandingTemplate": "Ich verstehe: [KLARE ZUSAMMENFASSUNG DER ANFRAGE] mit einer Sicherheit von [X]%.",
+      "metaInsight": "**MEINE META-ERKENNTNIS**:",
+      "proposalForWay": "**MEIN VORSCHLAG FÜR DEN WEG**:",
+      "whatYouWanted": "🔍 **Was du wolltest**:",
+      "way1Direct": "✅ **Weg 1: Direkte Antwort OHNE OS/HW-Erkennung**",
+      "way2OSHWDetection": "⚠️ **Weg 2: OS/HW-Erkennung erforderlich**",
+      "myRecommendation": "💡 **Meine Empfehlung**:",
+      "isThisCorrect": "Ist das korrekt? (JA/NEIN)"
+    }
+  },
+  "validation": {
+    "errors": {
+      "missingMetadata": "❌ Metadaten-Block fehlt",
+      "invalidYAML": "❌ Ungültiges YAML-Format",
+      "wrongProtocolVersion": "❌ Falsche Protokollversion",
+      "missingTaskId": "❌ task_id fehlt",
+      "missingUserRequest": "❌ User-Request-Block fehlt",
+      "missingSystemInstruction": "❌ Fehlende abschließende Systemanweisung",
+      "missingLanguageDirective": "❌ Fehlende Sprachvorgabe",
+      "missingConfirmationInstruction": "❌ Fehlende Anweisung für 'JA'-Bestätigung",
+      "missingDetectorInstruction": "❌ Fehlende Detektor-Generierungsanweisung"
+    },
+    "compliance": {
+      "score": "Konformitätsbewertung: {score}%",
+      "compliant": "✅ Dokument ist konform",
+      "nonCompliant": "❌ Dokument ist nicht konform"
+    }
+  }
+}
+

@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "language": "en",
+    "name": "English",
+    "direction": "ltr",
+    "charset": "UTF-8",
+    "version": "1.0.0",
+    "lastUpdated": "2025-01-04"
+  },
+  "ui": {
+    "title": "IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR",
+    "languageSelector": {
+      "label": "Select Language",
+      "current": "Current language: {language}"
+    },
+    "buttons": {
+      "generate": "Generate IrsanAI - LRP Document",
+      "copy": "📋 Copy to Clipboard",
+      "reset": "🗑️ Reset",
+      "download": "⬇️ Download as Markdown",
+      "validate": "✅ Validate IrsanAI - LRP Document"
+    },
+    "labels": {
+      "projectDescription": "Describe your project:",
+      "placeholder": "Describe what you want to achieve..."
+    },
+    "notifications": {
+      "copySuccess": "✅ IrsanAI - LRP Document successfully copied to clipboard!",
+      "copyError": "❌ Error copying to clipboard",
+      "downloadSuccess": "✅ Markdown file downloaded successfully",
+      "validationSuccess": "✅ IrsanAI - LRP Document is fully compliant",
+      "validationError": "❌ IrsanAI - LRP Document has issues"
+    },
+    "status": {
+      "generating": "Generating IrsanAI - LRP Document...",
+      "validating": "Validating document...",
+      "ready": "Ready"
+    }
+  },
+  "instructions": {
+    "howItWorks": {
+      "title": "How the ONLY-ONE-PROMPT SYSTEM works:",
+      "steps": [
+        "Enter your request in the text field",
+        "Click on \"Generate IrsanAI - LRP Document\"",
+        "Copy the generated text with the Copy button",
+        "Paste it into an online LLM (e.g., ChatGPT, Claude)",
+        "Follow the instructions from the LLM"
+      ]
+    },
+    "howToUse": {
+      "title": "How to use the IrsanAI - LRP Document:",
+      "items": [
+        "Copy the generated Markdown code into your online LLM (ChatGPT, Claude, etc.)",
+        "Execute all steps that the LLM instructs you to do",
+        "Important: The LLM will ask for confirmation of understanding before generating code",
+        "For hardware dependencies: First run IrsanAI_OS_HW_Detector.py locally",
+        "For errors: Use IrsanAI_report.json for incremental updates"
+      ],
+      "important": "Important: This system makes NO AUTONOMOUS DECISIONS anymore - the LLM analyzes the request itself!"
+    },
+    "warning": {
+      "title": "Important:",
+      "text": "This tool does not generate code solutions directly. It only creates the IrsanAI - LRP Document that you must send to an online LLM."
+    }
+  },
+  "protocol": {
+    "templates": {
+      "header": "# IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT",
+      "disclaimer": "*This is an automatically generated IrsanAI - LRP Document – DO NOT MAKE ANY CHANGES!*",
+      "metadataTitle": "## METADATA (MACHINE READABLE)",
+      "userRequestTitle": "## USER-REQUEST (AUTOMATICALLY GENERATED)",
+      "preSelectorTitle": "## PRE-SELECTOR INSTRUCTION FOR THE LLM",
+      "llmInstructionTitle": "## INSTRUCTION FOR LLMs",
+      "languageInstruction": "RESPOND IN ENGLISH",
+      "metaRecognitionProcess": "Execute the following META-RECOGNITION PROCESS:",
+      "selfReflectiveAnalysis": "1. **SELF-REFLECTIVE INTENT ANALYSIS**",
+      "systemicDecisionPattern": "2. **SYSTEMIC DECISION PATTERN**",
+      "decisionJustification": "3. **JUSTIFICATION OF THE DECISION**",
+      "userConfirmation": "4. **EXPLICIT USER CONFIRMATION**",
+      "finalSystemInstruction": "5. **FINAL SYSTEM INSTRUCTION (NON-IGNORABLE)**"
+    },
+    "instructions": {
+      "followPreSelector": "STRICTLY FOLLOW THE PRE-SELECTOR INSTRUCTION – No autonomous decisions",
+      "showDecisionBasis": "CLEARLY SHOW YOUR DECISION BASIS – Use the following format:",
+      "understandingTemplate": "I understand: [CLEAR SUMMARY OF THE REQUEST] with a confidence of [X]%.",
+      "metaInsight": "**MY META-INSIGHT**:",
+      "proposalForWay": "**MY PROPOSAL FOR THE PATH**:",
+      "whatYouWanted": "🔍 **What you wanted**:",
+      "way1Direct": "✅ **Path 1: Direct Answer WITHOUT OS/HW Detection**",
+      "way2OSHWDetection": "⚠️ **Path 2: OS/HW Detection Required**",
+      "myRecommendation": "💡 **My Recommendation**:",
+      "isThisCorrect": "Is this correct? (YES/NO)"
+    }
+  },
+  "validation": {
+    "errors": {
+      "missingMetadata": "❌ Metadata block missing",
+      "invalidYAML": "❌ Invalid YAML format",
+      "wrongProtocolVersion": "❌ Wrong protocol version",
+      "missingTaskId": "❌ task_id missing",
+      "missingUserRequest": "❌ User-Request block missing",
+      "missingSystemInstruction": "❌ Missing final system instruction",
+      "missingLanguageDirective": "❌ Missing language directive",
+      "missingConfirmationInstruction": "❌ Missing instruction for 'YES' confirmation",
+      "missingDetectorInstruction": "❌ Missing detector generation instruction"
+    },
+    "compliance": {
+      "score": "Compliance Score: {score}%",
+      "compliant": "✅ Document is compliant",
+      "nonCompliant": "❌ Document is non-compliant"
+    }
+  }
+}
+

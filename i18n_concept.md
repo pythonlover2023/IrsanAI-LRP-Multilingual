@@ -57,7 +57,7 @@ Jede Sprachdatei folgt einer hierarchischen Struktur:
     "charset": "UTF-8"
   },
   "ui": {
-    "title": "IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR",
+    "title": "IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR",
     "buttons": {
       "generate": "IrsanAI - LRP Dokument generieren",
       "copy": "In Zwischenablage kopieren",
@@ -84,7 +84,7 @@ Jede Sprachdatei folgt einer hierarchischen Struktur:
   },
   "protocol": {
     "templates": {
-      "header": "# IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT",
+      "header": "# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT",
       "disclaimer": "*Dies ist ein automatisch generiertes IrsanAI - LRP Dokument – KEINE ÄNDERUNGEN VORNEHMEN!*",
       "metadataTitle": "## METADATEN (MASCHINENLESBAR)",
       "userRequestTitle": "## USER-REQUEST (AUTOMATISCH GENERIERT)"

@@ -2,9 +2,9 @@
 
 ## Einführung
 
-Die Transformation des IrsanAI-LRP v2.0 in eine mehrsprachige Anwendung erfordert eine systematische Herangehensweise, die sowohl die technischen Aspekte der Internationalisierung als auch die kulturellen Nuancen der Lokalisierung berücksichtigt. Dieser Implementierungsplan bietet eine umfassende Roadmap für die Entwicklung einer robusten, skalierbaren und benutzerfreundlichen mehrsprachigen Version des Systems.
+Die Transformation des IrsanAI-LRP Systems in eine mehrsprachige Anwendung erfordert eine systematische Herangehensweise, die sowohl die technischen Aspekte der Internationalisierung als auch die kulturellen Nuancen der Lokalisierung berücksichtigt. Dieser Implementierungsplan bietet eine umfassende Roadmap für die Entwicklung einer robusten, skalierbaren und benutzerfreundlichen mehrsprachigen Version des Systems.
 
-Das ursprüngliche IrsanAI-LRP v2.0 ist als deutschsprachige Webanwendung konzipiert, die ein spezialisiertes Protokoll für die Kommunikation mit Large Language Models generiert. Die Herausforderung besteht darin, diese Funktionalität auf sechs verschiedene Sprachen zu erweitern, ohne die Kernfunktionalität zu beeinträchtigen oder die Benutzerfreundlichkeit zu reduzieren.
+Das ursprüngliche IrsanAI-LRP System ist als deutschsprachige Webanwendung konzipiert, die ein spezialisiertes Protokoll für die Kommunikation mit Large Language Models generiert. Die Herausforderung besteht darin, diese Funktionalität auf sechs verschiedene Sprachen zu erweitern, ohne die Kernfunktionalität zu beeinträchtigen oder die Benutzerfreundlichkeit zu reduzieren.
 
 ## Technische Architektur der mehrsprachigen Implementierung
 
@@ -46,7 +46,7 @@ Ein kritischer Aspekt dieser Phase ist die Extraktion aller vorhandenen deutsche
 
 Die zweite Phase konzentriert sich auf die Implementierung der englischen Lokalisierung, die als Referenz für alle weiteren Sprachimplementierungen dient. Diese Phase ist besonders wichtig, da sie die Gelegenheit bietet, die Internationalisierungs-Engine zu testen und zu verfeinern, bevor weitere Sprachen hinzugefügt werden.
 
-Die Übersetzung der deutschen Texte ins Englische erfordert nicht nur sprachliche Kompetenz, sondern auch ein tiefes Verständnis der technischen Konzepte und Terminologien, die im IrsanAI-LRP v2.0 verwendet werden. Besondere Aufmerksamkeit muss der Übersetzung der Protokollanweisungen gewidmet werden, da diese für die Funktionalität des Systems kritisch sind.
+Die Übersetzung der deutschen Texte ins Englische erfordert nicht nur sprachliche Kompetenz, sondern auch ein tiefes Verständnis der technischen Konzepte und Terminologien, die im IrsanAI-LRP System verwendet werden. Besondere Aufmerksamkeit muss der Übersetzung der Protokollanweisungen gewidmet werden, da diese für die Funktionalität des Systems kritisch sind.
 
 Die Implementierung des Sprachauswahl-Interface ist ein weiterer wichtiger Aspekt dieser Phase. Das Interface muss intuitiv und benutzerfreundlich sein, während es gleichzeitig alle notwendigen Funktionen für den Sprachwechsel bereitstellt. Das Design sollte responsive sein und auf verschiedenen Geräten und Bildschirmgrößen gut funktionieren.
 
@@ -74,7 +74,7 @@ Die Übersetzung ins Chinesische erfordert besondere Aufmerksamkeit für technis
 
 ### Herausforderungen bei der Protokoll-Lokalisierung
 
-Die Lokalisierung des IrsanAI-LRP v2.0 Protokolls stellt eine der komplexesten Herausforderungen der gesamten Implementierung dar. Das Protokoll enthält sowohl maschinenlesbare Elemente, die sprachunabhängig bleiben müssen, als auch menschenlesbare Anweisungen, die lokalisiert werden müssen.
+Die Lokalisierung des IrsanAI-LRP Protokolls stellt eine der komplexesten Herausforderungen der gesamten Implementierung dar. Das Protokoll enthält sowohl maschinenlesbare Elemente, die sprachunabhängig bleiben müssen, als auch menschenlesbare Anweisungen, die lokalisiert werden müssen.
 
 Die maschinenlesbaren Teile des Protokolls, wie YAML-Metadaten, Task-IDs und Validierungsschlüssel, müssen in allen Sprachversionen identisch bleiben, um die Kompatibilität mit bestehenden Systemen zu gewährleisten. Gleichzeitig müssen die Anweisungen für Large Language Models in der jeweiligen Zielsprache verfasst werden, um eine optimale Verständlichkeit zu gewährleisten.
 
@@ -212,5 +212,5 @@ Regelmäßige Community-Events, wie Übersetzungsmarathons oder Feedback-Session
 
 Ein Anerkennungssystem für aktive Community-Mitglieder motiviert zur kontinuierlichen Beteiligung und schafft ein Gefühl der Eigenverantwortung für die Qualität der Übersetzungen.
 
-Dieser umfassende Implementierungsplan bietet eine solide Grundlage für die erfolgreiche Transformation des IrsanAI-LRP v2.0 in eine vollständig mehrsprachige Anwendung. Die systematische Herangehensweise gewährleistet, dass alle Aspekte der Internationalisierung berücksichtigt werden, während gleichzeitig die Qualität und Performance der Anwendung erhalten bleiben.
+Dieser umfassende Implementierungsplan bietet eine solide Grundlage für die erfolgreiche Transformation des IrsanAI-LRP Systems in eine vollständig mehrsprachige Anwendung. Die systematische Herangehensweise gewährleistet, dass alle Aspekte der Internationalisierung berücksichtigt werden, während gleichzeitig die Qualität und Performance der Anwendung erhalten bleiben.
 

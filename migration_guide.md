@@ -2,9 +2,9 @@
 
 ## Einführung und Überblick
 
-Die Migration des IrsanAI-LRP v2.0 zu einer vollständig mehrsprachigen Anwendung stellt einen bedeutenden Entwicklungsschritt dar, der sowohl technische Exzellenz als auch kulturelle Sensibilität erfordert. Dieser umfassende Leitfaden bietet Entwicklern eine detaillierte Roadmap für die systematische Transformation des bestehenden deutschsprachigen Systems in eine internationale Anwendung, die sechs verschiedene Sprachen unterstützt.
+Die Migration des IrsanAI-LRP Systems zu einer vollständig mehrsprachigen Anwendung stellt einen bedeutenden Entwicklungsschritt dar, der sowohl technische Exzellenz als auch kulturelle Sensibilität erfordert. Dieser umfassende Leitfaden bietet Entwicklern eine detaillierte Roadmap für die systematische Transformation des bestehenden deutschsprachigen Systems in eine internationale Anwendung, die sechs verschiedene Sprachen unterstützt.
 
-Das ursprüngliche IrsanAI-LRP v2.0 wurde als spezialisierte Webanwendung entwickelt, die ein einzigartiges Protokoll für die Kommunikation mit Large Language Models generiert. Die Herausforderung der Internationalisierung liegt nicht nur in der Übersetzung von Texten, sondern in der Schaffung einer Architektur, die kulturelle Unterschiede berücksichtigt, Performance optimiert und gleichzeitig die Kernfunktionalität des Systems erhält.
+Das ursprüngliche IrsanAI-LRP System wurde als spezialisierte Webanwendung entwickelt, die ein einzigartiges Protokoll für die Kommunikation mit Large Language Models generiert. Die Herausforderung der Internationalisierung liegt nicht nur in der Übersetzung von Texten, sondern in der Schaffung einer Architektur, die kulturelle Unterschiede berücksichtigt, Performance optimiert und gleichzeitig die Kernfunktionalität des Systems erhält.
 
 Die Migration erfolgt in sechs klar definierten Phasen, die jeweils spezifische Ziele verfolgen und aufeinander aufbauen. Jede Phase wurde sorgfältig geplant, um Risiken zu minimieren und eine kontinuierliche Funktionalität während des gesamten Migrationsprozesses zu gewährleisten. Die Entwickler können den Fortschritt in jeder Phase validieren, bevor sie zur nächsten übergehen, was eine kontrollierte und sichere Migration ermöglicht.
 
@@ -24,7 +24,7 @@ Die erfolgreiche Migration erfordert eine sorgfältige Planung der organisatoris
 
 Ein Projektmanagement-System sollte eingerichtet werden, um den Fortschritt der Migration zu verfolgen und die Koordination zwischen verschiedenen Teammitgliedern zu erleichtern. Dies umfasst die Verwaltung von Übersetzungsaufgaben, die Verfolgung von Code-Änderungen und die Dokumentation von Entscheidungen und Problemen.
 
-Die Erstellung eines Terminologie-Glossars ist ein kritischer Schritt, der vor Beginn der eigentlichen Migration abgeschlossen werden sollte. Dieses Glossar sollte alle technischen Begriffe, Produktnamen und spezialisierten Ausdrücke enthalten, die im IrsanAI-LRP v2.0 verwendet werden, zusammen mit ihren bevorzugten Übersetzungen in jeder Zielsprache.
+Die Erstellung eines Terminologie-Glossars ist ein kritischer Schritt, der vor Beginn der eigentlichen Migration abgeschlossen werden sollte. Dieses Glossar sollte alle technischen Begriffe, Produktnamen und spezialisierten Ausdrücke enthalten, die im IrsanAI-LRP System verwendet werden, zusammen mit ihren bevorzugten Übersetzungen in jeder Zielsprache.
 
 ### Backup und Versionskontrolle
 
@@ -112,15 +112,15 @@ Die Sprachauswahl-Komponente wird in die Kopfzeile der Seite integriert. Diese K
 
 Die Übersetzung ins Englische ist von strategischer Bedeutung, da Englisch als internationale Lingua Franca fungiert und die Qualität dieser Übersetzung den Standard für alle weiteren Sprachen setzt. Die Übersetzung muss nicht nur sprachlich korrekt, sondern auch kulturell angemessen und technisch präzise sein.
 
-Der Übersetzungsprozess beginnt mit der Erstellung eines umfassenden Kontextdokuments, das die Funktion und den Zweck jedes zu übersetzenden Textes erklärt. Dies ist besonders wichtig für technische Begriffe und spezielle Terminologien, die im IrsanAI-LRP v2.0 verwendet werden.
+Der Übersetzungsprozess beginnt mit der Erstellung eines umfassenden Kontextdokuments, das die Funktion und den Zweck jedes zu übersetzenden Textes erklärt. Dies ist besonders wichtig für technische Begriffe und spezielle Terminologien, die im IrsanAI-LRP System verwendet werden.
 
-Fachterminologien erfordern besondere Aufmerksamkeit. Begriffe wie "IrsanAI-LRP v2.0 Protokolls", "OS/HW-Detektor" und "Pre-Selector" müssen konsistent übersetzt werden. In vielen Fällen ist es angemessen, die ursprünglichen Begriffe beizubehalten und sie durch erklärende Texte zu ergänzen, um Verwirrung zu vermeiden.
+Fachterminologien erfordern besondere Aufmerksamkeit. Begriffe wie "LRP-Protokoll", "OS/HW-Detektor" und "Pre-Selector" müssen konsistent übersetzt werden. In vielen Fällen ist es angemessen, die ursprünglichen Begriffe beizubehalten und sie durch erklärende Texte zu ergänzen, um Verwirrung zu vermeiden.
 
 Die Übersetzung der Anweisungstexte erfordert ein tiefes Verständnis der technischen Prozesse. Die Anweisungen müssen klar und präzise sein, da sie den Benutzern helfen, komplexe technische Aufgaben zu verstehen und auszuführen. Kulturelle Unterschiede in der Kommunikation müssen berücksichtigt werden - während deutsche Anweisungen oft direkt und detailliert sind, bevorzugen englischsprachige Benutzer möglicherweise prägnantere Formulierungen.
 
 ### Anpassung der Protokollgenerierung
 
-Die Anpassung der Protokollgenerierung für die englische Sprache stellt eine der komplexesten Herausforderungen der Migration dar. Das IrsanAI-LRP v2.0 Protokolls enthält sowohl maschinenlesbare Elemente, die sprachunabhängig bleiben müssen, als auch menschenlesbare Anweisungen, die lokalisiert werden müssen.
+Die Anpassung der Protokollgenerierung für die englische Sprache stellt eine der komplexesten Herausforderungen der Migration dar. Das LRP-Protokoll enthält sowohl maschinenlesbare Elemente, die sprachunabhängig bleiben müssen, als auch menschenlesbare Anweisungen, die lokalisiert werden müssen.
 
 Die Struktur des Protokolls bleibt in allen Sprachen identisch, aber die Anweisungen für Large Language Models müssen in der jeweiligen Zielsprache verfasst werden. Dies erfordert eine sorgfältige Analyse der ursprünglichen deutschen Anweisungen, um ihre Intention und Logik zu verstehen.
 
@@ -132,11 +132,11 @@ Besondere Aufmerksamkeit muss der Übersetzung der Meta-Erkenntnisprozesse gewid
 
 Das Testing der englischen Lokalisierung muss umfassend und systematisch erfolgen. Dies umfasst sowohl automatisierte Tests als auch manuelle Überprüfungen durch native English Speaker.
 
-Automatisierte Tests überprüfen die technische Funktionalität der Internationalisierung. Dies umfasst Tests für das korrekte Laden der englischen Sprachdatei, die ordnungsgemäße Aktualisierung aller UI-Elemente beim Sprachwechsel und die korrekte Generierung englischer IrsanAI-LRP v2.0 Protokollse.
+Automatisierte Tests überprüfen die technische Funktionalität der Internationalisierung. Dies umfasst Tests für das korrekte Laden der englischen Sprachdatei, die ordnungsgemäße Aktualisierung aller UI-Elemente beim Sprachwechsel und die korrekte Generierung englischer LRP-Protokolle.
 
 Funktionale Tests simulieren komplette Benutzerszenarien in englischer Sprache. Diese Tests überprüfen nicht nur die Übersetzung der Texte, sondern auch die Benutzerfreundlichkeit und Verständlichkeit der englischen Version. Testbenutzer führen typische Aufgaben aus und bewerten die Klarheit der Anweisungen und die Intuitivität der Benutzeroberfläche.
 
-Die Validierung der englischen IrsanAI-LRP v2.0 Protokollse erfordert Tests mit tatsächlichen Large Language Models. Generierte englische Protokolle werden an verschiedene LLMs gesendet, um zu überprüfen, ob sie die gewünschten Ergebnisse produzieren. Diese Tests sind kritisch, da sie die Funktionalität des Kernsystems in der neuen Sprache validieren.
+Die Validierung der englischen LRP-Protokolle erfordert Tests mit tatsächlichen Large Language Models. Generierte englische Protokolle werden an verschiedene LLMs gesendet, um zu überprüfen, ob sie die gewünschten Ergebnisse produzieren. Diese Tests sind kritisch, da sie die Funktionalität des Kernsystems in der neuen Sprache validieren.
 
 Performance-Tests messen die Auswirkungen der Internationalisierung auf die Anwendungsleistung. Dies umfasst die Messung der Ladezeiten für Sprachdateien, die Rendering-Performance beim Sprachwechsel und die Gesamtperformance der Anwendung in verschiedenen Sprachkonfigurationen.
 
@@ -260,7 +260,7 @@ Das System kategorisiert Feedback automatisch nach Sprache und Priorität und le
 
 Regelmäßige Community-Events, wie Übersetzungsmarathons oder Feedback-Sessions, fördern die aktive Beteiligung der Benutzer an der Verbesserung der Anwendung. Diese Events helfen auch dabei, neue Übersetzer zu finden und die Community zu stärken.
 
-Dieser umfassende Migrationsleitfaden bietet Entwicklern eine detaillierte Roadmap für die erfolgreiche Transformation des IrsanAI-LRP v2.0 in eine vollständig mehrsprachige Anwendung. Die systematische Herangehensweise gewährleistet, dass alle Aspekte der Internationalisierung berücksichtigt werden, während gleichzeitig die Qualität und Performance der Anwendung erhalten bleiben.
+Dieser umfassende Migrationsleitfaden bietet Entwicklern eine detaillierte Roadmap für die erfolgreiche Transformation des IrsanAI-LRP Systems in eine vollständig mehrsprachige Anwendung. Die systematische Herangehensweise gewährleistet, dass alle Aspekte der Internationalisierung berücksichtigt werden, während gleichzeitig die Qualität und Performance der Anwendung erhalten bleiben.
 
 
 
@@ -762,5 +762,5 @@ class TranslationVersioning {
 }
 ```
 
-Diese umfassende Implementierungsanleitung bietet Entwicklern alle notwendigen Werkzeuge und Strategien für die erfolgreiche Migration des IrsanAI-LRP v2.0 zu einer vollständig mehrsprachigen Anwendung. Die systematische Herangehensweise und die detaillierten Code-Beispiele gewährleisten eine professionelle Implementierung, die sowohl technische Exzellenz als auch kulturelle Sensibilität vereint.
+Diese umfassende Implementierungsanleitung bietet Entwicklern alle notwendigen Werkzeuge und Strategien für die erfolgreiche Migration des IrsanAI-LRP Systems zu einer vollständig mehrsprachigen Anwendung. Die systematische Herangehensweise und die detaillierten Code-Beispiele gewährleisten eine professionelle Implementierung, die sowohl technische Exzellenz als auch kulturelle Sensibilität vereint.
 

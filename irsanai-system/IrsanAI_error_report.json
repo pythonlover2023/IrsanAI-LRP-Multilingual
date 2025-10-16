@@ -1,0 +1,8 @@
+{
+  "status": "error",
+  "timestamp": "2025-08-27T11:55:25.683026",
+  "detector_version": "2.2",
+  "error_message": "[WinError 3] Das System kann den angegebenen Pfad nicht finden: ''",
+  "error_type": "FileNotFoundError",
+  "traceback": "Verfügbar in Log-Datei"
+}

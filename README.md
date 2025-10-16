@@ -265,7 +265,7 @@ Dieses Projekt steht unter der gleichen Lizenz wie das ursprüngliche IrsanAI-LR
 
 - **GitHub Issues**: Für Bug Reports und Feature Requests
 - **Discussions**: Für allgemeine Fragen und Community-Austausch
-- **Email**: [Kontakt-Email einfügen]
+- **Email**: "kommt noch" 
 
 ## 🔮 Roadmap
 

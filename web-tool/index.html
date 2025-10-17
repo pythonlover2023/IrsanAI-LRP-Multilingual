@@ -250,6 +250,18 @@
             const validationResult = document.getElementById('validation-result');
             const copyNotification = document.getElementById('copy-notification');
 
+            generateBtn.addEventListener('click', function() {
+                const description = userPrompt.value.trim();
+                if (description) {
+                    const lrpDocument = generateLRPDocument(description);
+                    output.textContent = lrpDocument;
+                    output.style.display = 'block';
+                    buttonContainer.style.display = 'block';
+                } else {
+                    alert('Bitte beschreiben Sie Ihr Projektvorhaben.');
+                }
+            });
+
             // Generiert das IrsanAI - LRP Dokument
             function generateLRPDocument(description) {
                 const timestamp = new Date().toISOString();

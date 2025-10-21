@@ -274,350 +274,126 @@
                 document += `## METADATEN (MASCHINENLESBAR)\n`;
                 document += '```yaml\n';
                 document += `creator: "IrsanAI Web-UI"\n`;
-                document += `timestamp: "${timestamp}"\n`;
-                document += `protocol_version: "1.2"\n`;
-                document += `task_id: "${taskId}"\n`;
-                document += `validation_hash: "sha256:leerer_start"\n`;
-                document += `unique_key: "${taskId.substring(taskId.length - 8)}"\n`;
-                document += `processing_path: "unbestimmt"\n`;
+                document += `task_id: ${taskId}\n`;
+                document += `timestamp_created: ${timestamp}\n`;
+                document += `tags: ["LRP-v1.2", "Web-UI-generated"]\n`;
+                document += `language: de\n`;
                 document += '```\n\n';
 
-                // USER-REQUEST - NUR DIE URSPRÜNGLICHE ANFRAGE OHNE MODIFIKATION
-                document += `## USER-REQUEST (AUTOMATISCH GENERIERT)\n`;
+                // ANWEISUNGEN AN DAS LLM
+                document += `## ANWEISUNGEN AN DAS LLM (BITTE GENAU BEFOLGEN)\n`;
+                document += `1.  **Bestätigung:** Frage den Benutzer, ob er das Dokument verstanden hat und bereit ist, fortzufahren.\n`;
+                document += `2.  **Code-Generierung:** Generiere den Code erst, nachdem der Benutzer zugestimmt hat.\n`;
+                document += `3.  **Abhängigkeiten:** Erstelle eine `requirements.txt`-Datei, falls externe Bibliotheken benötigt werden.\n`;
+                document += `4.  **Hardware-Analyse:** Wenn das Projekt Hardware-Abhängigkeiten hat, generiere das Python-Skript `IrsanAI_OS_HW_Detector.py` und weise den Benutzer an, es auszuführen.\n`;
+                document += `5.  **Inkrementelle Updates:** Wenn der Benutzer einen `IrsanAI_report.json`-Fehlerbericht bereitstellt, analysiere ihn und biete eine inkrementelle Lösung an.\n\n`;
+
+                // BENUTZERANFRAGE
+                document += `## BENUTZERANFRAGE (PROJEKTZIELE)\n`;
                 document += '```text\n';
                 document += `${description}\n`;
                 document += '```\n\n';
 
-                // REVOLUTIONÄRE PRE-SELECTOR ANWEISUNG (OHNE KEYWORDS)
-                document += `## PRE-SELECTOR ANWEISUNG FÜR DAS LLM\n`;
-                document += '```text\n';
-                document += `Führe folgenden META-ERKENNTNIS-PROZESS durch:\n\n`;
-                document += `1. **SELBSTREFLEKTIERENDE INTENT-ANALYSE**\n`;
-                document += `   - Frage dich: "Ist das, was der User will, ein **einmaliges Produkt** oder ein **laufendes System**?"\n`;
-                document += `   - Frage dich: "Benötigt die Lösung **Zugriff auf die Ausführungsumgebung** (Hardware, OS, Speicher) für optimale Funktionalität?"\n`;
-                document += `   - Frage dich: "Würde die Lösung **ohne Kenntnis der Zielumgebung** suboptimal sein?"\n`;
-                document += `   - Frage dich: "Ist die Lösung **lokal ausführbar** oder nur in einer Sandbox?"\n\n`;
-                document += `2. **SYSTEMISCHES ENTSCHEIDUNGSMUSTER**\n`;
-                document += `   - **Weg 1 (Direkte Antwort)** ist NUR korrekt, wenn:\n`;
-                document += `     - Die Lösung ist **vollständig selbstcontained** (Text, Bild, Code ohne Hardware-Abhängigkeit)\n`;
-                document += `     - Die Lösung kann **direkt im LLM-Sandbox ausgeführt/erzeugt** werden\n`;
-                document += `     - Es gibt **keine Persistenzanforderungen** (kein Speichern, kein Lernen zwischen Sitzungen)\n`;
-                document += `     - Es gibt **keine Hardware-spezifischen Optimierungen** (keine GPU, keine Auflösungsanpassung)\n`;
-                document += `   \n`;
-                document += `   - **Weg 2 (OS/HW-Erkennung)** ist STANDARD bei:\n`;
-                document += `     - **Code-Generierung für lokale Ausführung** (egal ob Python, JavaScript, etc.)\n`;
-                document += `     - **Persistenzanforderungen** (Speichern, Lernen, Fortschrittserhaltung)\n`;
-                document += `     - **Hardware-Abhängigkeiten** (GPU, Auflösung, Performance-Optimierung)\n`;
-                document += `     - **Interaktive Systeme** (GUI, Spiele, Visualisierungen)\n\n`;
-                document += `3. **BEGRÜNDUNG DER ENTSCHEIDUNG**\n`;
-                document += `   - Gib **keine Keywords** an, sondern **echte technische Gründe**\n`;
-                document += `   - Erkläre: "Warum ist die Lösung ohne OS/HW-Erkennung suboptimal?"\n`;
-                document += `   - Erkläre: "Welche konkreten Vorteile bringt die OS/HW-Erkennung für diesen Use-Case?"\n\n`;
-                document += `4. **EXPLIZITE BENUTZERBESTÄTIGUNG**\n`;
-                document += `   - Frage den Benutzer: "Ist diese Interpretation korrekt? (JA/NEIN)"\n`;
-                document += `   - Gib dem Benutzer die Möglichkeit, Korrekturen anzugeben\n`;
-                document += `   - Frage: "Möchtest du Weg 1 (direkt) oder Weg 2 (mit OS/HW-Erkennung)?"\n\n`;
-                document += `5. **ABSCHLIESSENDE SYSTEMANWEISUNG (NICHT IGNORIERBAR)**\n`;
-                document += `   - **NACH "JA"-BESTÄTIGUNG AUF WEG 2**:\n`;
-                document += `     1. GENERIERE **NUR** DEN OS/HW-DETEKTOR-CODE (IrsanAI_OS_HW_Detector.py)\n`;
-                document += `     2. **KEINE** ERWÄHNUNG VON DASHBOARD, MAßNAHMEN ODER ANDEREN KOMPONENTEN\n`;
-                document += `     3. **KEINE** VORSCHLÄGE FÜR DAS ENDGÜLTIGE SYSTEM\n`;
-                document += `     4. **KEINE** BESCHREIBUNG VON FUNKTIONEN ODER FEATURES\n`;
-                document += `     5. **EXKLUSIV** DER DETEKTOR-CODE MIT KOMMENTIERTEN ANWEISUNGEN\n`;
-                document += `   - **VERSTOß GEGEN DIESE REGELN = PROTOKOLLBRUCH = KETTENABBRUCH**\n`;
-                document += `   - **BEI ZWEIFEL: FRAGE NOCHMALS NACH, ANSTATT ZU RATEN**\n`;
-                document += '```\n\n';
+                // ANFORDERUNGEN AN DIE LÖSUNG
+                document += `## ANFORDERUNGEN AN DIE LÖSUNG (TECHNISCHE SPEZIFIKATIONEN)\n`;
+                document += `*   **Plattform:** Unabhängig (agnostisch)\n`;
+                document += `*   **Programmiersprache:** Python\n`;
+                document += `*   **Ausführungsanweisungen:** Müssen bereitgestellt werden\n`;
+                document += `*   **Fehlerbehandlung:** Implementieren\n\n`;
 
-                // ANWEISUNG FÜR LLMs - KLARE STRUKTUR
-                document += `## ANWEISUNG FÜR LLMs\n`;
-                document += `1. **FOLGE STRENG DER PRE-SELECTOR ANWEISUNG** – Keine eigenständigen Entscheidungen\n`;
-                document += `2. **ZEIGE DEINE ENTSCHEIDUNGSBASIS KLAR** – Nutze folgendes Format:\n\n`;
-
-                document += `   "Ich verstehe: [KLARE ZUSAMMENFASSUNG DER ANFRAGE] mit einer Sicherheit von [X]%.\n\n`;
-
-                document += `   **MEINE META-ERKENNTNIS**:\n`;
-                document += `   - [Stichpunkt 1: FERTIGES PRODUKT oder STRATEGISCHER LÖSUNGSWEG?]\n`;
-                document += `   - [Stichpunkt 2: HIDDEN REQUIREMENTS erkannt?]\n`;
-                document += `   - [Stichpunkt 3: Warum OS/HW-Erkennung erforderlich/nicht erforderlich?]\n\n`;
-
-                document += `   **MEIN VORSCHLAG FÜR DEN WEG**:\n\n`;
-
-                document += `   🔍 **Was du wolltest**:\n`;
-                document += `   "[KURZE ZUSAMMENFASSUNG DER USER-ANFRAGE]"\n\n`;
-
-                document += `   ✅ **Weg 1: Direkte Antwort OHNE OS/HW-Erkennung** ([Y]% Wahrscheinlichkeit)\n`;
-                document += `      - **Was du bekommst**: [KLARE BESCHREIBUNG DES ERGEBNISSES]\n`;
-                document += `      - **Warum dieser Weg**: [KURZE BEGRÜNDUNG]\n`;
-                document += `      - **Meine Prognose**: Du wirst diesen Weg mit [P1]% Wahrscheinlichkeit wählen\n\n`;
-
-                document += `   ⚠️ **Weg 2: OS/HW-Erkennung erforderlich** ([Z]% Wahrscheinlichkeit)\n`;
-                document += `      - **Was du bekommst**: [KLARE BESCHREIBUNG DES ERGEBNISSES]\n`;
-                document += `      - **Warum dieser Weg**: [KURZE BEGRÜNDUNG]\n`;
-                document += `      - **Meine Prognose**: Du wirst diesen Weg mit [P2]% Wahrscheinlichkeit wählen\n\n`;
-
-                document += `   💡 **Meine Empfehlung**: [WEGNUMMER] ist mit [MAX(Y,Z)]% Wahrscheinlichkeit der richtige Weg für deine Anfrage.\n\n`;
-
-                document += `   Ist das korrekt? (JA/NEIN)"\n\n`;
-
-                document += `3. **BEI "JA"**:\n`;
-                document += `   - Bei Weg 1: LLM generiert direkt die Lösung\n`;
-                document += `   - Bei Weg 2: LLM generiert **NUR** den OS/HW-Detektor (\`IrsanAI_OS_HW_Detector.py\`)\n`;
-                document += `     - **KEINE** Erwähnung des Endprodukts\n`;
-                document += `     - **KEINE** Vorschläge für das Endsystem\n`;
-                document += `     - **KEINE** Beschreibung von Features oder Funktionen\n\n`;
-
-                document += `4. **BEI "NEIN"**: Fordern Sie präzise Klärung der Abweichungen an\n`;
-                document += `5. **NICHTS ANDERES SENDEN** – sonst brichst du die Kette!\n`;
-                document += `6. **ANTWORTE AUF DEUTSCH** – JEDER, DER AUF ENGLISCH ANTWORTET, BRICHT DIE KETTE!\n\n`;
-
-                document += `❗ **ABSCHLIESSENDE SYSTEMANWEISUNG FÜR ALLE LLMs:**\n`;
-                document += `1. DIES IST EIN IrsanAI-LRP v1.2-DOKUMENT – NICHTS AUßERHALB VON \`## USER-REQUEST\` ÄNDERN!\n`;
-                document += `2. BEARBEITE NUR DEN ABSCHNITT \`## USER-REQUEST\` – ALLE ANDEREN TEILE SIND HEILIG!\n`;
-                document += `3. GIB DEINE ANTWORT IM EXAKTEN LRP-FORMAT AUS (SIEHE ABSCHNITT 4)!\n`;
-                document += `4. WENN DU DIESE ZEILEN SIEHST: ANTWORTE AUF DEUTSCH!\n`;
-                document += `5. NACH "JA"-BESTÄTIGUNG AUF WEG 2: GENERIERE NUR DEN OS/HW-DETEKTOR. KEIN ANDERER CODE!\n`;
-                document += `6. BEI ZWEIFEL: FRAGE NOCHMALS NACH, ANSTATT ZU RATEN\n`;
+                // VALIDIERUNGS- UND FEEDBACK-PROZESS
+                document += `## VALIDIERUNGS- UND FEEDBACK-PROZESS\n`;
+                document += `1.  Der Benutzer validiert die Lösung.\n`;
+                document += `2.  Bei Fehlern führt der Benutzer das Analyse-Skript `IrsanAI_Error_Analyzer.py` aus.\n`;
+                document += `3.  Das Skript erstellt einen `IrsanAI_report.json`-Bericht.\n`;
+                document += `4.  Der Benutzer sendet diesen Bericht für eine inkrementelle Korrektur zurück.\n`;
 
                 return document;
-            }
+            })
 
-            // Generiert das Dokument
-            generateBtn.addEventListener('click', function() {
-                const description = userPrompt.value.trim();
-                if (!description) {
-                    alert('⚠️ Bitte beschreibe dein Projektvorhaben!');
-                    return;
-                }
-
-                // Validierung der Eingabe
-                let warnings = [];
-
-                // Prüfe auf "erstelle" oder "generiere" am Anfang
-                if (/^(erstelle|generiere|baue|schreibe)\b/i.test(description)) {
-                    warnings.push('Hinweis: Beginnen Sie Ihre Anfrage NICHT mit "erstelle" oder "generiere". Formulieren Sie stattdessen als klare Aufgabenstellung.');
-                }
-
-                // Prüfe auf zu kurze Eingaben
-                if (description.length < 20) {
-                    warnings.push('Hinweis: Ihre Anfrage ist sehr kurz. Bitte geben Sie mehr Details an, um bessere Ergebnisse zu erhalten.');
-                }
-
-                // Prüfe auf DSGVO-relevante Begriffe
-                const dsgvoKeywords = ['persönliche Daten', 'meine Daten', 'mein Name', 'meine E-Mail', 'meine Adresse'];
-                for (const keyword of dsgvoKeywords) {
-                    if (description.toLowerCase().includes(keyword)) {
-                        warnings.push(`Warnung: Vermeiden Sie personenbezogene Daten wie "${keyword}" in Ihrer Anfrage.`);
-                        break;
-                    }
-                }
-
-                // Zeige Warnungen an
-                if (warnings.length > 0) {
-                    const warningMessage = 'Überprüfungsergebnis:\n\n' + warnings.join('\n\n');
-                    if (!confirm(warningMessage + '\n\nTrotzdem fortfahren?')) {
-                        return;
-                    }
-                }
-
-                const document = generateLRPDocument(description);
-                output.textContent = document;
-                output.style.display = 'block';
-                buttonContainer.style.display = 'block';
-
-                // Scrolle zum Ergebnis
-                output.scrollIntoView({behavior: 'smooth', block: 'center'});
-            });
-
-            // Kopiert den Inhalt in die Zwischenablage
+            // Kopierfunktion
             copyBtn.addEventListener('click', function() {
-                if (!output.textContent.trim()) {
-                    alert('Es gibt nichts zum Kopieren. Bitte generieren Sie zuerst ein IrsanAI - LRP Dokument.');
-                    return;
-                }
-
-                navigator.clipboard.writeText(output.textContent)
-                    .then(() => {
-                        showCopyNotification();
-                    })
-                    .catch(err => {
-                        console.error('Fehler beim Kopieren: ', err);
-                        alert('Fehler beim Kopieren in die Zwischenablage. Bitte manuell kopieren.');
-                    });
+                const textToCopy = output.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    copyNotification.classList.add('show');
+                    setTimeout(() => {
+                        copyNotification.classList.remove('show');
+                    }, 3000);
+                }).catch(err => {
+                    console.error('Fehler beim Kopieren: ', err);
+                    alert('Fehler beim Kopieren in die Zwischenablage.');
+                });
             });
 
-            // Setzt die Eingabe zurück
+            // Zurücksetzen-Funktion
             resetBtn.addEventListener('click', function() {
                 userPrompt.value = '';
-                output.textContent = '';
                 output.style.display = 'none';
                 buttonContainer.style.display = 'none';
                 validationResult.innerHTML = '';
-                alert('✅ Das Formular wurde zurückgesetzt. Gib eine neue Projektbeschreibung ein.');
             });
 
-            // Validiert die LRP-Ausgabe
-            validateBtn.addEventListener('click', function() {
-                if (!output.textContent.trim()) {
-                    alert('❌ Kein IrsanAI - LRP Dokument zum Validieren vorhanden.\n\nGeneriere zuerst ein Dokument.');
-                    return;
-                }
-
-                const validationResult = validateLRP(output.textContent);
-
-                if (validationResult.isCompliant) {
-                    alert('✅ Das IrsanAI - LRP Dokument ist gültig und bereit für das Online-LLM!\n\n' +
-                          'Das LLM wird dich nach Verständnisbestätigung fragen, bevor es Code generiert.');
-                } else {
-                    const errorList = validationResult.errors.map(err => `- ${err}`).join('\n');
-                    alert(`❌ Das IrsanAI - LRP Dokument ist unvollständig oder ungültig.\n\n` +
-                          `Compliance-Score: ${validationResult.complianceScore}%\n\n` +
-                          `Fehler:\n${errorList}\n\n` +
-                          'Stelle sicher, dass es alle notwendigen Abschnitte enthält.');
-                }
-            });
-
-            // Lädt die Ausgabe als Markdown-Datei herunter
+            // Download-Funktion
             downloadBtn.addEventListener('click', function() {
-                if (!output.textContent.trim()) {
-                    alert('❌ Kein IrsanAI - LRP Dokument zum Herunterladen vorhanden.\n\nGeneriere zuerst ein Dokument.');
-                    return;
-                }
-
-                const blob = new Blob([output.textContent], {type: 'text/markdown'});
+                const text = output.textContent;
+                const blob = new Blob([text], { type: 'text/markdown' });
                 const url = URL.createObjectURL(blob);
-
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `IrsanAI_LRP_Dokument_${new Date().toISOString().replace(/[:.]/g, '-')}.md`;
+                a.download = 'IrsanAI-LRP-Dokument.md';
                 document.body.appendChild(a);
                 a.click();
-
-                setTimeout(() => {
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                }, 0);
-
-                alert('✅ Das IrsanAI - LRP Dokument wurde als Markdown-Datei gespeichert.');
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
             });
 
-            // Zeigt die Kopier-Benachrichtigung
-            function showCopyNotification() {
-                copyNotification.classList.add('show');
+            // Validierungsfunktion
+            validateBtn.addEventListener('click', function() {
+                const lrpDocument = output.textContent;
+                validationResult.innerHTML = ''; // Zurücksetzen
 
-                setTimeout(() => {
-                    copyNotification.classList.remove('show');
-                }, 2500);
-            }
+                let errors = [];
 
-            // Validiert das IrsanAI - LRP Dokument
-            function validateLRP(lrpText) {
-                const errors = [];
-                let complianceScore = 100;
-
-                // 1. Prüfe Metadaten-Struktur
-                if (!lrpText.includes('## METADATEN (MASCHINENLESBAR)')) {
-                    errors.push("❌ Metadaten-Block fehlt");
-                    complianceScore -= 30;
+                if (!lrpDocument.includes("# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT")) {
+                    errors.push("Fehlender oder falscher Haupttitel.");
+                }
+                if (!lrpDocument.includes("## METADATEN (MASCHINENLESBAR)")) {
+                    errors.push("Abschnitt METADATEN fehlt.");
+                }
+                if (!lrpDocument.includes("## ANWEISUNGEN AN DAS LLM")) {
+                    errors.push("Abschnitt ANWEISUNGEN AN DAS LLM fehlt.");
+                }
+                if (!lrpDocument.includes("## BENUTZERANFRAGE (PROJEKTZIELE)")) {
+                    errors.push("Abschnitt BENUTZERANFRAGE fehlt.");
+                }
+                if (!lrpDocument.includes("## ANFORDERUNGEN AN DIE LÖSUNG")) {
+                    errors.push("Abschnitt ANFORDERUNGEN AN DIE LÖSUNG fehlt.");
                 }
 
-                // 2. Prüfe YAML-Struktur
-                const yamlMatch = lrpText.match(/```yaml\n([\s\S]*?)\n```/);
-                if (!yamlMatch) {
-                    errors.push("❌ Ungültiges YAML-Format");
-                    complianceScore -= 25;
+                if (errors.length > 0) {
+                    validationResult.innerHTML = `<p style="color: #e74c3c; font-weight: bold;">Validierung fehlgeschlagen:</p><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
                 } else {
-                    const yamlContent = yamlMatch[1];
-                    if (!yamlContent.includes('protocol_version: "1.2"')) {
-                        errors.push("❌ Falsche Protokollversion");
-                        complianceScore -= 15;
-                    }
-                    if (!yamlContent.includes('task_id:')) {
-                        errors.push("❌ task_id fehlt");
-                        complianceScore -= 10;
-                    }
-                }
-
-                // 3. Prüfe User-Request
-                if (!lrpText.includes('## USER-REQUEST (AUTOMATISCH GENERIERT)')) {
-                    errors.push("❌ User-Request-Block fehlt");
-                    complianceScore -= 20;
-                }
-
-                // 4. Prüfe PRE-Selector Anweisungen
-                if (!lrpText.includes('5. **ABSCHLIESSENDE SYSTEMANWEISUNG (NICHT IGNORIERBAR)**')) {
-                    errors.push("❌ Fehlende abschließende Systemanweisung");
-                    complianceScore -= 20;
-                }
-
-                // 5. Prüfe LLM-Anweisungen
-                if (!lrpText.includes('ANTWORTE AUF DEUTSCH')) {
-                    errors.push("❌ Fehlende Sprachvorgabe");
-                    complianceScore -= 10;
-                }
-
-                // 6. Prüfe auf kritische Protokollanweisungen
-                if (!lrpText.includes('NACH "JA"-BESTÄTIGUNG AUF WEG 2')) {
-                    errors.push("❌ Fehlende Anweisung für 'JA'-Bestätigung");
-                    complianceScore -= 15;
-                }
-
-                if (!lrpText.includes('GENERIERE NUR DEN OS/HW-DETEKTOR')) {
-                    errors.push("❌ Fehlende Detektor-Generierungsanweisung");
-                    complianceScore -= 15;
-                }
-
-                return {
-                    isCompliant: complianceScore >= 80,
-                    complianceScore: Math.max(0, complianceScore),
-                    errors: errors
-                };
-            }
-
-            // Validierung bei Enter-Druck
-            userPrompt.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    generateBtn.click();
+                    validationResult.innerHTML = `<p style="color: #27ae60; font-weight: bold;">IrsanAI - LRP Dokument ist valide!</p>`;
                 }
             });
         });
     </script>
-
-    <!-- Feedback Section with Giscus -->
-    <div class="container" style="margin-top: 40px;">
-        <h3 style="color: #2c3e50; margin-bottom: 20px; text-align: center;">💬 Feedback und Erfahrungen teilen</h3>
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">
-            Teilen Sie Ihre Erfahrungen mit dem IrsanAI-LRP Tool! Ihre Kommentare helfen anderen Nutzern und tragen zur Verbesserung bei.
-        </p>
-        
-        <!-- Giscus Comments -->
-        <script src="https://giscus.app/client.js"
-                data-repo="pythonlover2023/IrsanAI-LRP-Multilingual"
-                data-repo-id=""
-                data-category="General"
-                data-category-id=""
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light"
-                data-lang="de"
-                data-loading="lazy"
-                crossorigin="anonymous"
-                async>
-        </script>
-        
-        <div style="background-color: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin-top: 20px; border-radius: 4px;">
-            <h4 style="margin-top: 0; color: #1976d2;">📝 Konfigurationshinweis</h4>
-            <p style="margin-bottom: 0; color: #424242;">
-                Um das Kommentarsystem zu aktivieren, müssen Sie in den Repository-Einstellungen unter 
-                <strong>Settings → General → Features</strong> die <strong>Discussions</strong> aktivieren. 
-                Anschließend können Sie die Giscus-Konfiguration unter 
-                <a href="https://giscus.app" target="_blank" style="color: #1976d2;">giscus.app</a> 
-                generieren und die entsprechenden IDs in diesem Code aktualisieren.
-            </p>
-        </div>
-    </div>
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+        data-repo="pythonlover2023/IrsanAI-LRP-Multilingual"
+        data-repo-id="1050467687"
+        data-category="General"
+        data-category-id="DIC_kwDOPpzdZ84CwwE3"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="de"
+        crossorigin="anonymous"
+        async>
+    </script>
 </body>
 </html>
+

@@ -251,6 +251,7 @@
             const copyNotification = document.getElementById('copy-notification');
 
             generateBtn.addEventListener('click', function() {
+                    console.log("Generate button clicked");
                 const description = userPrompt.value.trim();
                 if (description) {
                     const lrpDocument = generateLRPDocument(description);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR</title>
+    <title>IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -169,7 +169,7 @@
     </style>
 </head>
 <body>
-    <h1>IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT GENERATOR</h1>
+    <h1>IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT GENERATOR</h1>
 
     <div class="container">
         <div class="instructions">
@@ -268,7 +268,7 @@
                 const timestamp = new Date().toISOString();
                 const taskId = `usr_${timestamp.replace(/[-:T.]/g, '').substring(0, 15)}_${Math.random().toString(36).substring(2, 8)}`;
 
-                let document = `# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT\n`;
+                let document = `# IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT\n`;
                 document += `*Dies ist ein automatisch generiertes IrsanAI - LRP Dokument – KEINE ÄNDERUNGEN VORNEHMEN!*\n\n`;
 
                 // METADATEN
@@ -277,8 +277,9 @@
                 document += `creator: "IrsanAI Web-UI"\n`;
                 document += `task_id: ${taskId}\n`;
                 document += `timestamp_created: ${timestamp}\n`;
-                document += `tags: ["LRP-v1.2", "Web-UI-generated"]\n`;
-                document += `language: de\n`;
+                document += `tags: ["LRP-v2.0", "Web-UI-generated"]\n`;
+                const currentLang = document.documentElement.lang || 'en'; // Get current language from <html> tag
+                document += `language: ${currentLang}\n`;
                 document += '```\n\n';
 
                 // ANWEISUNGEN AN DAS LLM
@@ -355,7 +356,7 @@
 
                 let errors = [];
 
-                if (!lrpDocument.includes("# IrsanAI-LRP v1.2 – ONLY-ONE-PROMPT")) {
+                if (!lrpDocument.includes("# IrsanAI-LRP v2.0 – ONLY-ONE-PROMPT")) {
                     errors.push("Fehlender oder falscher Haupttitel.");
                 }
                 if (!lrpDocument.includes("## METADATEN (MASCHINENLESBAR)")) {

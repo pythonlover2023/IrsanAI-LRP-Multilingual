@@ -1,5 +1,13 @@
 # IrsanAI-LRP Mehrsprachige Version - Projektübersicht
 
+## 🚀 **LIVE-DEMO: Testen Sie den ONLY-ONE-PROMPT GENERATOR jetzt!**
+
+Klicken Sie hier, um die voll funktionsfähige, mehrsprachige Version des IrsanAI-LRP Protokoll-Generators direkt in Ihrem Browser zu nutzen:
+
+👉 **[IrsanAI-LRP Multilingual Web-Tool](https://pythonlover2023.github.io/IrsanAI-LRP-Multilingual/)**
+
+---
+
 ## 🌍 Überblick
 
 Dieses Projekt stellt die vollständige Transformation des IrsanAI-LRP Systems in eine mehrsprachige Anwendung dar, die sechs verschiedene Sprachen unterstützt: Deutsch, Englisch, Spanisch, Französisch, Italienisch und Chinesisch (vereinfacht).
@@ -287,4 +295,3 @@ Dieses Projekt steht unter der gleichen Lizenz wie das ursprüngliche IrsanAI-LR
 ---
 
 **Hinweis**: Dieses Projekt befindet sich in aktiver Entwicklung. Die mehrsprachige Funktionalität wird schrittweise ausgerollt. Feedback und Beiträge sind jederzeit willkommen!
-

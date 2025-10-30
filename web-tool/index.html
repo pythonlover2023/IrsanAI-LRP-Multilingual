@@ -251,17 +251,17 @@
             const copyNotification = document.getElementById('copy-notification');
 
             generateBtn.addEventListener('click', function() {
-	                console.log('Generate button clicked. Checking description...');
+
 
                 const description = userPrompt.value.trim();
                 if (description) {
-	                    console.log('Description is present. Generating document...');
+
                     const lrpDocument = generateLRPDocument(description);
                     output.textContent = lrpDocument;
                     output.style.display = 'block';
                     buttonContainer.style.display = 'block';
                 } else {
-	                    console.log('Description is empty. Showing alert.');
+
                     alert('Bitte beschreiben Sie Ihr Projektvorhaben.');
                 }
             });

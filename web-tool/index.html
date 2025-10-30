@@ -251,6 +251,11 @@
             const copyNotification = document.getElementById('copy-notification');
 
             generateBtn.addEventListener('click', function() {
+	                // Defensive check to ensure all elements are available
+	                if (!userPrompt || !output || !buttonContainer) {
+	                    console.error("Critical DOM elements are missing.");
+	                    return;
+	                }
 
 
                 const description = userPrompt.value.trim();
